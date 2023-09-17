@@ -26,14 +26,12 @@ fn search_rot(rot: i32, cipher_text: &str, result_text: &mut String) -> bool {
                 "{}:{}, {}:{}",
                 c,
                 c as u32,
-                char::from_u32(((c as i32 + 122 + rot + (97 - 1)) % (122 - 97 + 1) + 97) as u32)
-                    .unwrap(),
-                ((c as i32 + 122 + rot + (97 - 1)) % (122 - 97 + 1) + 97) as u32
+                char::from_u32((((c as i32 - 97) + rot) % (122 - 97 + 1) + 97) as u32).unwrap(),
+                (((c as i32 - 97) + rot) % (122 - 97 + 1) + 97) as u32
             );
-            // C_R = (c+max+rot+(min-1))%(max-min+1)+min
+            // C_R = (((c-min)+rot)%(max-min+1)+min
             result_text.push(
-                char::from_u32(((c as i32 + 122 + rot + (97 - 1)) % (122 - 97 + 1) + 97) as u32)
-                    .unwrap(),
+                char::from_u32((((c as i32 - 97) + rot) % (122 - 97 + 1) + 97) as u32).unwrap(),
             );
             continue;
         }
