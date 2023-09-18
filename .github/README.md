@@ -16,4 +16,4 @@ cargo run
 
 ## 🗒️ Links
 - [ROT 13](https://es.wikipedia.org/wiki/ROT13)
-- [ARTICLE WHERE ALL MESSAGES ARE SOLVED](https://api.astronvim.com)
+- [ARTICLE WHERE ALL MESSAGES ARE SOLVED](https://fabiensanglard.net/Ghost_in_the_Wires/)
